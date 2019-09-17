@@ -1,11 +1,15 @@
 import React from "react";
+import { Route } from "react-router-dom";
+import Login from "./components/Login";
+import FriendsList from "./components/FriendsList";
 import "./App.css";
 
 function App() {
   return (
-    <div>
-      <h1>Hello World</h1>
-    </div>
+    <>
+      <Route exact path="/" component={FriendsList} />
+      <Route path="/login" component={Login} />
+    </>
   );
 }
 
