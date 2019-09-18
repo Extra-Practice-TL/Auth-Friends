@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import Navigation from "./Navigation";
 import { axiosWithAuth } from "../utils/axiosWithAuth";
 
 const FriendsList = () => {
@@ -16,20 +17,21 @@ const FriendsList = () => {
   }, []);
   if (friends.length === 0) {
     return (
-      <div>
+      <main>
         <h2>Loading Friends....</h2>
-      </div>
+      </main>
     );
   }
 
   return (
-    <div>
-      <h2>Friends List Page</h2>
+    <main>
+      <Navigation />
+      <h2>Friends</h2>
       <ul>
         {friends &&
           friends.map(friend => <li key={friend.id}>{friend.name}</li>)}
       </ul>
-    </div>
+    </main>
   );
 };
 
